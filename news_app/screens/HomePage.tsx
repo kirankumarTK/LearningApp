@@ -1,18 +1,20 @@
 import React, {useEffect} from 'react';
-import {Text} from 'react-native';
+import {SafeAreaView} from 'react-native';
 import {appStyle} from '../app_styles/AppStyles';
+import NewsItem from '../app_components/NewsItem';
 const HomePage = ({navigation}) => {
   useEffect(() => {
-    navigation.addListener('beforeRemove', (e) => {
+    navigation.addListener('beforeRemove', e => {
       e.preventDefault();
       return;
     });
   }, []);
   return (
-    <Text style={[appStyle.textTitle, appStyle.center_align_view]}>
-      {' '}
-      Hello{' '}
-    </Text>
+    <React.Fragment>
+      <SafeAreaView style={[appStyle.app_background,appStyle.default_spacing_10]}>
+        <NewsItem />
+      </SafeAreaView>
+    </React.Fragment>
   );
 };
 

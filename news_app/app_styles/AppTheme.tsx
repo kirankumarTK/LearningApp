@@ -4,6 +4,8 @@ const appThemeColor = {
   textColor: '#554745',
   buttonColor: '#fc5d4f',
   titleFontSize : 19,
+  cardBackgroundcolor : '#ffffff',
+  shadowcolor : 'red',
 };
 
 export default appThemeColor;

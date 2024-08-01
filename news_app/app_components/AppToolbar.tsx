@@ -7,14 +7,20 @@ class AppToolbar extends React.PureComponent<Proptype> {
   render() {
     const {navigation, isHome, screenTitle} = this.props;
     return (
-      <SafeAreaView style={[appStyle.toolbar, appStyle.default_spacing]}>
-        {isHome && (
+      <SafeAreaView style={[appStyle.toolbar, appStyle.default_spacing_5]}>
+        {!isHome && (
           <TouchableOpacity onPress={() => navigation.goBack()}>
-            <Icon name="keyboard-arrow-left" style = {appStyle.toolBarIcon} />
+            <Icon name="keyboard-arrow-left" style={appStyle.toolBarIcon} />
           </TouchableOpacity>
         )}
 
-        <Text style={appStyle.toolBarTex}>{screenTitle}</Text>
+        <Text
+          style={[
+            appStyle.toolBarTex,
+            isHome ? appStyle.toolBarTextWidth100 : appStyle.toolBarTextWidth70,
+          ]}>
+          {screenTitle}
+        </Text>
       </SafeAreaView>
     );
   }
