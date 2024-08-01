@@ -1,2 +1,27 @@
 npm start -- --reset-cache
 use to clear cache 
+
+
+There are different env files that you could decide to use for your env variables. These different files include:
+
+.env — The default file used to store your dev, production, and test variables
+.env.local — Overrides all environment files except the test file (including the default .env file)
+.env.development — Specific to the development environment
+.env.development.local — Overrides the .env.development environment file
+.env.production — Specific to the production environment
+.env.production.local — Overrides the .env.production environment file
+.env.test — Specific to the test environment
+.env.test.local — Overrides the .env.test environment file
+In summary, the .env.development, .env.production, and .env.test files are environment-specific files. Meanwhile, the .env.development.local, .env.production.local, .env.test.local files are the local overrides of those respective files.
+
+If the environment settings are not explicitly specified, the default .env file is used.
+
+Priorities of env files
+Before explicitly setting your env files, you should understand the order of importance in which the machine handles the different env files.
+
+Let’s review how these files are prioritized when you run npm start, npm run build, or npm test. The files in the list below are organized from higher-priority on the left to lower-priority on the right:
+
+npm start: .env.development.local > .env.development > .env.local > .env
+npm run build: .env.production.local > .env.production > .env.local > .env
+npm test: .env.test.local > .env.test > .env
+Note that there are no .env.local files in the test environment because this type of file is not supported in the test environment.
