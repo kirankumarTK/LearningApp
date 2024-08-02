@@ -6,6 +6,7 @@ const appThemeColor = {
   titleFontSize : 19,
   cardBackgroundcolor : '#ffffff',
   shadowcolor : 'red',
+  inactiveTint : '#dba5a0',
 };
 
 export default appThemeColor;

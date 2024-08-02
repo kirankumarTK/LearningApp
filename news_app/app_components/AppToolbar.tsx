@@ -2,6 +2,8 @@ import React from 'react';
 import {SafeAreaView, Text, TouchableOpacity, View} from 'react-native';
 import {appStyle} from '../app_styles/AppStyles';
 import Icon from 'react-native-vector-icons/MaterialIcons';
+import { NativeStackNavigationProp } from '@react-navigation/native-stack';
+import { ParamListBase } from '@react-navigation/native';
 
 class AppToolbar extends React.PureComponent<Proptype> {
   render() {
@@ -29,7 +31,7 @@ class AppToolbar extends React.PureComponent<Proptype> {
 export default AppToolbar;
 
 interface Proptype {
-  navigation: any;
+  navigation: NativeStackNavigationProp<ParamListBase>;
   isHome: boolean;
   screenTitle: string;
 }

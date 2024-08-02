@@ -1,8 +1,12 @@
-import React, {useEffect} from 'react';
-import {SafeAreaView} from 'react-native';
-import {appStyle} from '../app_styles/AppStyles';
-import NewsItem from '../app_components/NewsItem';
-const HomePage = ({navigation}) => {
+import { useNavigation } from '@react-navigation/native';
+import { NativeStackNavigationProp } from '@react-navigation/native-stack';
+import React, { useEffect } from 'react';
+import BottomNavigation from '../app_navigation/BottomNavigation';
+import { RootStackParamList } from '../app_navigation/RootStackParamList';
+const HomePage = () => {
+  const navigation =
+    useNavigation<NativeStackNavigationProp<RootStackParamList, 'News'>>();
+
   useEffect(() => {
     navigation.addListener('beforeRemove', e => {
       e.preventDefault();
@@ -10,10 +14,8 @@ const HomePage = ({navigation}) => {
     });
   }, []);
   return (
-    <React.Fragment>
-      <SafeAreaView style={[appStyle.app_background,appStyle.default_spacing_10]}>
-        <NewsItem />
-      </SafeAreaView>
+    <React.Fragment >
+      <BottomNavigation/>
     </React.Fragment>
   );
 };

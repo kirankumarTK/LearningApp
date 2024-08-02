@@ -3,9 +3,10 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import SplashScreen from '../screens/SplashScreen';
 import HomePage from '../screens/HomePage';
 import AppToolbar from '../app_components/AppToolbar';
+import { RootStackParamList } from './RootStackParamList';
 
 const NavigationRegistry = () => {
-  const Stack = createNativeStackNavigator();
+  const Stack = createNativeStackNavigator<RootStackParamList>();
 
   return (
     <Stack.Navigator>
@@ -17,7 +18,7 @@ const NavigationRegistry = () => {
         }}
       />
       <Stack.Screen
-        name="News"
+        name="Home"
         component={HomePage}
         options={{
           headerTransparent : true,
