@@ -16,6 +16,7 @@ class BottomNavigation extends React.PureComponent {
         screenOptions={{
           tabBarShowLabel: false,
           tabBarStyle: appStyle.bottom_toolbar,
+          headerShown : false
         }}>
         <BottomTab.Screen
           name="News"
