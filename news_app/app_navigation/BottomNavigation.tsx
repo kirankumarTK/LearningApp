@@ -2,7 +2,7 @@ import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import React from 'react';
 import BottomToolBarView from '../app_components/BottomToolBarView';
 import {appStyle} from '../app_styles/AppStyles';
-import NewsHome from '../screens/NewsHome';
+import NewsHome from '../screens/NewsHome/NewsHome';
 import {RootStackParamList} from './RootStackParamList';
 import SportsNews from '../screens/SportsNews';
 import HealthNews from '../screens/HealthNews';

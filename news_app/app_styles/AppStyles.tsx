@@ -11,6 +11,8 @@ export const appStyle = StyleSheet.create({
   center_align_view: {
     alignSelf: 'center',
     alignItems: 'center',
+    justifyContent : 'center',
+    height : '100%'
   },
   textTitle: {
     fontSize: 25,
@@ -36,13 +38,14 @@ export const appStyle = StyleSheet.create({
     borderRadius: 50,
     elevation: 5,
     shadowRadius: 30,
-    height : '8%',
+    height: 50,
     shadowColor: appThemeColor.shadowcolor,
   },
 
   bottom_toolbar_view: {
     justifyContent: 'center',
     alignItems: 'center',
+    width: 40,
   },
   bottom_toolbar_text: {
     textAlign: 'center',
@@ -85,8 +88,8 @@ export const appStyle = StyleSheet.create({
     backgroundColor: appThemeColor.secondaryColor,
   },
   listItem: {
-    height: '35%',
-    width: '100%',
+    height : 250,
+    width: '97%',
   },
   cardview: {
     backgroundColor: appThemeColor.cardBackgroundcolor,
@@ -95,14 +98,15 @@ export const appStyle = StyleSheet.create({
     shadowRadius: 5,
     borderRadius: 5,
     elevation: 5,
+    margin : 5
   },
   newsCardImage: {
-    height: '80%',
+    height : '75%',
     width: '100%',
   },
   newsCardText: {
     color: appThemeColor.textColor,
-    height: '20%',
+    height : '20%',
     width: '100%',
     textAlign: 'left',
     padding: 5,
@@ -116,5 +120,10 @@ export const appStyle = StyleSheet.create({
   },
   inactiveTintColor: {
     color: appThemeColor.inactiveTint,
+  },
+  errorText: {
+    color: 'red',
+    textAlign: 'center',
+    margin: 20,
   },
 });

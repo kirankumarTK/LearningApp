@@ -3,11 +3,12 @@ import {Text, View} from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import {appStyle} from '../app_styles/AppStyles';
 import {RootStackParamList} from '../app_navigation/RootStackParamList';
-import { useNavigation } from '@react-navigation/native';
-import { NativeStackNavigationProp } from '@react-navigation/native-stack';
+import {useNavigation} from '@react-navigation/native';
+import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 
 const SplashScreen = () => {
-  const navigation = useNavigation<NativeStackNavigationProp<RootStackParamList, 'News'>>();
+  const navigation =
+    useNavigation<NativeStackNavigationProp<RootStackParamList, 'News'>>();
   const [timeLeft, setTimeLeft] = useState(1);
 
   useEffect(() => {
