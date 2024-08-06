@@ -4,8 +4,7 @@ import BottomToolBarView from '../app_components/BottomToolBarView';
 import {appStyle} from '../app_styles/AppStyles';
 import NewsHome from '../screens/NewsHome/NewsHome';
 import {RootStackParamList} from './RootStackParamList';
-import SportsNews from '../screens/SportsNews';
-import HealthNews from '../screens/HealthNews';
+
 
 const BottomTab = createBottomTabNavigator<RootStackParamList>();
 
@@ -30,7 +29,7 @@ class BottomNavigation extends React.PureComponent {
 
         <BottomTab.Screen
           name="Sports"
-          component={SportsNews}
+          component={NewsHome}
           options={{
             tabBarIcon: ({focused}) => (
               <BottomToolBarView focused={focused} name="Sports" />
@@ -40,7 +39,7 @@ class BottomNavigation extends React.PureComponent {
 
         <BottomTab.Screen
           name="Health"
-          component={HealthNews}
+          component={NewsHome}
           options={{
             tabBarIcon: ({focused}) => (
               <BottomToolBarView focused={focused} name="Health" />
