@@ -1,15 +1,16 @@
 import React from 'react';
-import {ActivityIndicator, ScrollView, Text, View} from 'react-native';
-import {appStyle} from '../../app_styles/AppStyles';
-import {NewsViewModel} from './NewsHomeViewModel';
-import Loading from '../../app_components/Loading';
+import { ActivityIndicator, FlatList, View } from 'react-native';
 import Error from '../../app_components/Error';
-import {FlatList} from 'react-native';
+import Loading from '../../app_components/Loading';
 import NewsItem from '../../app_components/NewsItem';
+import { appStyle } from '../../app_styles/AppStyles';
+import { NewsViewModel } from './NewsHomeViewModel';
+import appThemeColor from '../../app_styles/AppTheme';
 
 const NewsHome = () => {
-  const {news, loading, error, validateImageURL, naivigateToWebview} =
+  const { news, loading, error, validateImageURL, naivigateToWebview, callAPI, bottomLoading } =
     NewsViewModel();
+
 
   if (loading) {
     return <Loading />;
@@ -23,10 +24,13 @@ const NewsHome = () => {
     <React.Fragment>
       <View style={[appStyle.app_background]}>
         <FlatList
-          initialNumToRender={5}
+          initialNumToRender={10}
           data={news}
-          keyExtractor={(item : any) => item.title }
-          renderItem={({item}) => (
+          keyExtractor={(item: any) => item.title}
+          onEndReached={!bottomLoading ? callAPI : null}
+          onEndReachedThreshold={0.2}
+          ListFooterComponent={() => (bottomLoading ? <ActivityIndicator size="large" color={appThemeColor.primaryColor} /> : null)}
+          renderItem={({ item }) => (
             <NewsItem
               newItem={item}
               validateImageURL={validateImageURL}

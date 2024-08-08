@@ -1,4 +1,4 @@
-import {Platform, StyleSheet} from 'react-native';
+import { Platform, StyleSheet } from 'react-native';
 import appThemeColor from './AppTheme';
 
 export const appStyle = StyleSheet.create({
@@ -11,8 +11,8 @@ export const appStyle = StyleSheet.create({
   center_align_view: {
     alignSelf: 'center',
     alignItems: 'center',
-    justifyContent : 'center',
-    height : '100%'
+    justifyContent: 'center',
+    height: '100%'
   },
   textTitle: {
     fontSize: 25,
@@ -83,12 +83,12 @@ export const appStyle = StyleSheet.create({
   },
   app_background: {
     justifyContent: 'center',
-    height: '100%',
+    height: '90%',
     width: '100%',
     backgroundColor: appThemeColor.secondaryColor,
   },
   listItem: {
-    height : 250,
+    height: 250,
     width: '97%',
   },
   cardview: {
@@ -98,15 +98,15 @@ export const appStyle = StyleSheet.create({
     shadowRadius: 5,
     borderRadius: 5,
     elevation: 5,
-    margin : 5
+    margin: 5
   },
   newsCardImage: {
-    height : '75%',
+    height: '75%',
     width: '100%',
   },
   newsCardText: {
     color: appThemeColor.textColor,
-    height : '20%',
+    height: '20%',
     width: '100%',
     textAlign: 'left',
     padding: 5,
