@@ -16,6 +16,7 @@ const NewsHome = () => {
   }
 
   if (error != null) {
+
     return <Error errorMsg={error} />;
   }
   return (
@@ -24,6 +25,7 @@ const NewsHome = () => {
         <FlatList
           initialNumToRender={5}
           data={news}
+          keyExtractor={(item : any) => item.title }
           renderItem={({item}) => (
             <NewsItem
               newItem={item}

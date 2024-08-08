@@ -1,4 +1,4 @@
-import {useEffect, useState} from 'react';
+import {useCallback, useEffect, useState} from 'react';
 import api_service from '../../api_services/api_service';
 import {useNavigation, useRoute} from '@react-navigation/native';
 import {NativeStackNavigationProp} from '@react-navigation/native-stack';
@@ -9,7 +9,7 @@ export const NewsViewModel = () => {
     useNavigation<NativeStackNavigationProp<RootStackParamList, 'News'>>();
   const route = useRoute();
 
-  const [news, setNews] = useState();
+  const [news, setNews] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
@@ -34,12 +34,16 @@ export const NewsViewModel = () => {
       : 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJRS-4chjWMRAmrtz7ivK53K_uygrgjzw9Uw&s';
   }
 
-  function naivigateToWebview(url: string, title: string) {
+  // function naivigateToWebview(url: string, title: string) {
+  //   navigation.navigate('WebViewPage', {url, title});
+  // }
+
+  const naivigateToWebview = useCallback((url: string, title: string) => {
     navigation.navigate('WebViewPage', {url, title});
-  }
+  }, []);
 
   function getEndPoint(screenName: string): string {
-    var endpoint = '';
+    let endpoint = '';
     switch (screenName) {
       case AppConstant.newsScreen:
         endpoint = 'top-headlines?country=in&apiKey=';
@@ -47,9 +51,9 @@ export const NewsViewModel = () => {
       case AppConstant.SportsScreen:
         endpoint = 'top-headlines?country=in&category=sports&apiKey=';
         break;
-        case AppConstant.HealthScreen:
-          endpoint = 'top-headlines?country=in&category=health&apiKey=';
-          break;
+      case AppConstant.HealthScreen:
+        endpoint = 'top-headlines?country=in&category=health&apiKey=';
+        break;
     }
     return endpoint;
   }
