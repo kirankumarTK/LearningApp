@@ -6,6 +6,7 @@ import NewsItem from '../../app_components/NewsItem';
 import { appStyle } from '../../app_styles/AppStyles';
 import { NewsViewModel } from './NewsHomeViewModel';
 import appThemeColor from '../../app_styles/AppTheme';
+import NewsItemMemo from '../../app_components/NewsItemMemo';
 
 const NewsHome = () => {
   const { news, loading, error, validateImageURL, naivigateToWebview, callAPI, bottomLoading } =
@@ -31,7 +32,7 @@ const NewsHome = () => {
           onEndReachedThreshold={0.2}
           ListFooterComponent={() => (bottomLoading ? <ActivityIndicator size="large" color={appThemeColor.primaryColor} /> : null)}
           renderItem={({ item }) => (
-            <NewsItem
+            <NewsItemMemo
               newItem={item}
               validateImageURL={validateImageURL}
               naivigateToWebview={naivigateToWebview}
